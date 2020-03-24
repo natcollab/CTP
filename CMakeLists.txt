@@ -41,8 +41,8 @@ target_include_directories(CTP
 target_link_libraries(CTP
   INTERFACE  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/lib/libthostmduserapi.so>
              $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/lib/libthosttraderapi.so>
-             $<INSTALL_INTERFACE:${CTP_LIB_INSTALL_DIR}/libthostmduserapi.so>
-             $<INSTALL_INTERFACE:${CTP_LIB_INSTALL_DIR}/libthosttraderapi.so>
+             $<INSTALL_INTERFACE:$<INSTALL_PREFIX>/${CTP_LIB_INSTALL_DIR}/libthostmduserapi.so>
+             $<INSTALL_INTERFACE:$<INSTALL_PREFIX>/${CTP_LIB_INSTALL_DIR}/libthosttraderapi.so>
   )
 
 #=================================================================================
@@ -62,7 +62,6 @@ install(DIRECTORY lib/
 
 install(TARGETS CTP EXPORT CTP_export)
 
-# TODO: library path in export target file is relative path, which is not correct
 install(EXPORT CTP_export
   NAMESPACE CTP::
   FILE CTPTargets.cmake
