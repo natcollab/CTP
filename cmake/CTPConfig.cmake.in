@@ -1,0 +1,15 @@
+get_filename_component(OpenOnload_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+
+if(NOT TARGET OpenOnload::OpenOnload)
+  include("${OpenOnload_CMAKE_DIR}/OpenOnloadTargets.cmake")
+endif()
+
+#=================================================================================
+# NOTE: the following code is not necessary, can be deleted in a target based system
+
+@PACKAGE_INIT@
+
+set_and_check(OpenOnload_INCLUDE_DIR "@PACKAGE_OpenOnload_INCLUDE_INSTALL_DIR@")
+set_and_check(OpenOnload_LIBRARIES_DIR "@PACKAGE_OpenOnload_LIB_INSTALL_DIR@")
+
+check_required_components(OpenOnload)
