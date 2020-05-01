@@ -18,8 +18,8 @@ cmake_minimum_required(VERSION 3.15...3.17)
 
 # Setup Project name and version
 # CMakeTest_VERSION and PROJECT_VERSION variables are set
-project(CTP VERSION 1.0
-  DESCRIPTION "Interface to CTP library"
+project(CTP VERSION 6.3.15
+  DESCRIPTION "Interface to CTP library with SE support"
   LANGUAGES CXX
   )
 
@@ -39,10 +39,10 @@ target_include_directories(CTP
   )
 
 target_link_libraries(CTP
-  INTERFACE  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/lib/libthostmduserapi.so>
-             $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/lib/libthosttraderapi.so>
-             $<INSTALL_INTERFACE:$<INSTALL_PREFIX>/${CTP_LIB_INSTALL_DIR}/libthostmduserapi.so>
-             $<INSTALL_INTERFACE:$<INSTALL_PREFIX>/${CTP_LIB_INSTALL_DIR}/libthosttraderapi.so>
+  INTERFACE  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/lib/libthostmduserapi_se.so>
+             $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/lib/libthosttraderapi_se.so>
+             $<INSTALL_INTERFACE:$<INSTALL_PREFIX>/${CTP_LIB_INSTALL_DIR}/libthostmduserapi_se.so>
+             $<INSTALL_INTERFACE:$<INSTALL_PREFIX>/${CTP_LIB_INSTALL_DIR}/libthosttraderapi_se.so>
   )
 
 #=================================================================================
