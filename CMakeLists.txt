@@ -18,7 +18,7 @@ cmake_minimum_required(VERSION 3.15...3.17)
 
 # Setup Project name and version
 # CMakeTest_VERSION and PROJECT_VERSION variables are set
-project(CTP VERSION 6.3.15
+project(CTP VERSION 6.3.19
   DESCRIPTION "Interface to CTP library with SE support"
   LANGUAGES CXX
   )
